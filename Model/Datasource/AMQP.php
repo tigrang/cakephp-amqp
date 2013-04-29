@@ -132,7 +132,7 @@ class AMQP extends DataSource {
 	 * @param string|array $message
 	 * @return bool
 	 */
-	public function publish($message, $routingKey, $flags = AMQP_NOPARAM, $attributes = []) {
+	public function publish($message, $routingKey, $flags = AMQP_NOPARAM, $attributes = array()) {
 		$this->connect();
 
 		if (!in_array($routingKey, $this->config['types']) && $this->config['types'] !== array('*')) {
